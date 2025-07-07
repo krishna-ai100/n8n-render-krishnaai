@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: n8n-auto
+    env: docker
+    image: n8nio/n8n
+    plan: free
+    region: oregon
+    startCommand: docker-entrypoint.sh n8n start
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: kuchbhi123
+      - key: N8N_HOST
+        value: n8n-auto.onrender.com
+      - key: WEBHOOK_URL
+        value: https://n8n-auto.onrender.com/
